@@ -1,0 +1,501 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Cards Slide</title> 
+	<link rel="stylesheet" href="/style.css"> 
+	<script src="/script.js" defer></script> 
+	<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head> 
+
+<style>
+
+.wrapper { 
+    max-width: 2000px; 
+    position: relative; 
+  
+} 
+
+.wrapper i { 
+	height: 50px; 
+	width: 50px; 
+	background: red; 
+	text-align: center; 
+	line-height: 50px; 
+	border-radius: 30%; 
+	cursor: pointer; 
+	position: absolute; 
+	top: 50%; 
+	font-size: 1.25 rem; 
+	transform: translateY(-50%); 
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); 
+
+} 
+
+.wrapper i:first-child { 
+	left:30px; 
+
+} 
+
+.wrapper i:last-child { 
+	right: 30px; 
+
+} 
+
+.wrapper .carousel { 
+	display: grid; 
+	grid-auto-flow: column; 
+	grid-auto-columns: calc((100%  / 3) - 12px); 
+	gap: 33px; 
+	overflow-x: auto; 
+	scroll-snap-type: x mandatory; 
+	scroll-behavior: smooth; 
+	scrollbar-width:00;
+} 
+
+.carousel::-webkit-scrollbar { 
+	display: none; 
+} 
+
+.carousel :where(.card, .img) { 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+} 
+
+.carousel.dragging { 
+	scroll-snap-type: none; 
+	scroll-behavior: auto; 
+} 
+
+.carousel.no-transition { 
+	scroll-behavior: auto; 
+} 
+
+.carousel.dragging .card { 
+	cursor: grab; 
+	user-select: none; 
+} 
+
+.carousel .card { 
+	scroll-snap-align: start; 
+	height: 400px; 
+	list-style: none; 
+	background: #fff; 
+	border-radius: 8px; 
+	display: flex; 
+	cursor: pointer; 
+	width: 100%; 
+	padding-bottom: 15px; 
+	align-items: center; 
+	justify-content: center; 
+	flex-direction: column; 
+} 
+
+
+
+
+.card span { 
+	color: #6a6d78; 
+	font-size: 1.31rem; 
+
+} 
+
+@media screen and (max-width: 900px) { 
+	.wrapper .carousel { 
+		grid-auto-columns: calc((100% / 2) - 9px); 
+
+	} 
+} 
+
+@media screen and (max-width: 600px) { 
+	.wrapper .carousel { 
+		grid-auto-columns: 100%; 
+
+	} 
+}
+.carousel{
+margin-left:80px;
+margin-right:80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.6);
+    z-index: 1001;
+}
+#popup {
+    width: 555px;
+    height: 500px;
+    background-image:url('https://i.pinimg.com/originals/a3/57/3c/a3573c74725a2b3df26ff600095a258c.gif');
+    background-repeat:no-repeat;
+    background-size:cover;
+    border: 2px solid #000;
+    border-radius: 50px;
+    position: relative;
+    top: 150px; left: 375px;
+}
+.popupimages{
+	height:200px;
+	width:553px;
+	margin-top:60px;
+}
+.btn-close{
+	margin-left:500px;
+	margin-top:20px;
+	margin-right:20px;
+}
+.popupdescription{
+	margin-top:70px;
+}
+
+.card-body{
+	width:100%;
+	background-color:aqua;
+	border: 10px solid white;
+}
+.cardsimages{
+   border:20px solid white;
+   height:150px;
+   width:100%;
+}
+
+  body{
+  background-image:url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-255379.jpg&fm=jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  .cardslideimages{
+  height:135\px;
+  width:421px;
+  }
+  
+  .cardscollapseimages{
+    border: 10px solid white;
+    height: 150px;
+    }
+    
+    
+    
+    
+    
+    .collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border: 10px solid aqua;
+  
+}
+
+.active, .collapsible:hover {
+  background-color: red;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: aqua;
+  border:10px solid aqua;
+}
+</style>
+
+<body> 
+
+
+
+										<!-- Popup -->
+
+
+
+
+<div id="ac-wrapper">
+    <div id="popup" th:each="popup : ${popup}">
+    		<div data-bs-theme="dark">
+  		<button type="button" class="btn-close" aria-label="Close" onClick="PopUp()"></button>
+		</div>
+            <h2 class="text-center text-light" th:text="${popup.name}"></h2>
+            <img class="popupimages" th:src="@{'/images/' + ${popup.imageFileName}}" alt="..." width="100">
+            <h3 class="text-center text-light popupdescription" th:text="${popup.description}"></h3>
+            <div class="d-grid gap-2 col-6 mx-auto">
+</div>
+    </div>
+</div>
+
+
+										<!-- Navbar -->
+
+
+
+
+   <nav class="navbar navbar-expand-lg bg-body-tertiary" th:each="navigationbar : ${navigationbar}">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://localhost:8080/">Electronic store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#" th:text="${navigationbar.home}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" th:text="${navigationbar.aboutus}"></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${navigationbar.contactus}"></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:each = "navbar : ${navbar}" th:text="${navbar.contactus}"></a></li>
+          </ul>
+                  <li class="nav-item">
+          <a class="nav-link" href="/product/deals" th:text="${navigationbar.deals}"></a>
+        </li>
+                 <li class="nav-item">
+          <a class="nav-link" href="/product/feedback" th:text="${navigationbar.feedback}"></a>
+        </li>
+               <li class="nav-item">
+          <a class="nav-link" href="/product/login" th:text="${navigationbar.login}"></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8080/" th:text="${navigationbar.logout}"></a>
+        </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${navigationbar.service}"></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:each = "navbar : ${navbar}" th:text="${navbar.service}"></a></li>
+          </ul>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      
+    </div>
+  </div>
+</nav> <br>
+
+
+
+										<!-- cards -->
+
+
+
+<div class="container">
+		<div class="cards">
+  <div class="row row-cols-4 grid">
+<div class="card mb-3" th:each="product : *{product}">
+  <img src="..." class="card-img-top cardsimages" alt="..." th:src="@{'/images/' + *{product.imageFileName}}">
+  <div class="card-body ">
+    <h5 class="card-title" th:text="*{product.name}"></h5>
+     <ul class="list-group list-group-flush ">
+  <li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  <li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  </ul>  <br>
+    <a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    <a href="#" class="btn btn-danger"> Buy Now</a>    
+  </div>
+  </div>
+  </div>
+  </div>
+</div><br>
+
+
+
+										<!-- cards slide -->
+
+
+
+	<div class="wrapper"> 
+		<i id="left" class="fa-solid fas fa-angle-left"></i> 
+		<ul class="carousel"> 
+			<li class="card" th:each="product : ${product}"> 
+				<div class="img">
+				<img alt="" draggable="false" class="cardslideimages" th:src="@{'/images/' + *{product.imageFileName}}">
+				</div> 
+				<h2 style="color: green; font-weight:bold;" > </h2> 
+<div class="card-body">
+    <h5 class="card-title" th:text="*{product.name}"></h5>
+	<ul class="list-group list-group-flush ">
+  		<li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  		<li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  	</ul>  <br>
+    	<a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    	<a href="#" class="btn btn-danger"> Buy Now</a>    
+     	</div>
+			</li>		
+		</ul> <br>
+		<i id="right" class="fa-solid fas fa-angle-right"></i> 
+	</div> 
+
+
+
+										<!-- Cards with collapse -->
+										
+
+
+<div class="container text-center">
+  <div class="row" >
+    <div class="col" th:each="product : ${product}">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top cardsimages" alt="..." th:src="@{'/images/' + *{product.imageFileName}}">
+  <div class="card-body">
+    <h5 class="card-title" th:text="*{product.name}"></h5>
+<button type="button" class="collapsible" style="text-align:center">view more</button>
+<div class="content">
+<ul class="list-group list-group-flush ">
+  		<li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  		<li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  	</ul>  <br>
+    	<a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    	<a href="#" class="btn btn-danger"> Buy Now</a>    
+  	</div>
+  </div>
+</div>
+</div>
+</div>
+</div> <br>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+
+
+function PopUp(){
+    document.getElementById('ac-wrapper').style.display="none"; 
+}
+
+document.addEventListener("DOMContentLoaded", function() { 
+	const carousel = document.querySelector(".carousel"); 
+	const arrowBtns = document.querySelectorAll(".wrapper i"); 
+	const wrapper = document.querySelector(".wrapper"); 
+
+	const firstCard = carousel.querySelector(".card"); 
+	const firstCardWidth = firstCard.offsetWidth; 
+
+	let isDragging = false, 
+		startX, 
+		startScrollLeft, 
+		timeoutId; 
+
+	const dragStart = (e) => { 
+		isDragging = true; 
+		carousel.classList.add("dragging"); 
+		startX = e.pageX; 
+		startScrollLeft = carousel.scrollLeft; 
+	}; 
+
+	const dragging = (e) => { 
+		if (!isDragging) return; 
+	
+		// Calculate the new scroll position 
+		const newScrollLeft = startScrollLeft - (e.pageX - startX); 
+	
+		// Check if the new scroll position exceeds 
+		// the carousel boundaries 
+		if (newScrollLeft <= 0 || newScrollLeft >= 
+			carousel.scrollWidth - carousel.offsetWidth) { 
+			
+			// If so, prevent further dragging 
+			isDragging = false; 
+			return; 
+		} 
+	
+		// Otherwise, update the scroll position of the carousel 
+		carousel.scrollLeft = newScrollLeft; 
+	}; 
+
+	const dragStop = () => { 
+		isDragging = false; 
+		carousel.classList.remove("dragging"); 
+	}; 
+
+	const autoPlay = () => { 
+	
+		// Return if window is smaller than 800 
+		if (window.innerWidth < 800) return; 
+		
+		// Calculate the total width of all cards 
+		const totalCardWidth = carousel.scrollWidth; 
+		
+		// Calculate the maximum scroll position 
+		const maxScrollLeft = totalCardWidth - carousel.offsetWidth; 
+		
+		// If the carousel is at the end, stop autoplay 
+		if (carousel.scrollLeft >= maxScrollLeft) return; 
+		
+		// Autoplay the carousel after every 2500ms 
+		timeoutId = setTimeout(() => 
+			carousel.scrollLeft += firstCardWidth, 2500); 
+	}; 
+
+	carousel.addEventListener("mousedown", dragStart); 
+	carousel.addEventListener("mousemove", dragging); 
+	document.addEventListener("mouseup", dragStop); 
+	wrapper.addEventListener("mouseenter", () => 
+		clearTimeout(timeoutId)); 
+	wrapper.addEventListener("mouseleave", autoPlay); 
+
+	// Add event listeners for the arrow buttons to 
+	// scroll the carousel left and right 
+	arrowBtns.forEach(btn => { 
+		btn.addEventListener("click", () => { 
+			carousel.scrollLeft += btn.id === "left" ? 
+				-firstCardWidth : firstCardWidth; 
+		}); 
+	}); 
+}); 
+</script>
+</body>
+</html>

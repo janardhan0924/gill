@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Mart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+body{background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148817571.jpg');
+background-repeat: no-repeat;
+background-size:cover;
+}
+</style>
+<body>
+
+   <nav class="navbar navbar-expand-lg bg-body-tertiary websitenavbar" th:each="navitems : ${navitems}">
+  <div class="container-fluid">
+    <a class="navbar-brand electronicstore" href="http://localhost:8080/">Electronic Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="flex-direction: row;font-family: none;font-size: 20px;">
+      
+      
+     <li class="nav-item" th:each = "verticalnavbar : ${verticalnavbar}">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a style="color:red" th:text="${verticalnavbar.heading1}"></a>
+  <a href="/product/deals" th:text="${verticalnavbar.heading2}"></a>
+  <a href="/product/deals" th:text="${verticalnavbar.heading3}"></a>
+  <a href="/product/deals" th:text="${verticalnavbar.heading4}"></a>
+  <a href="/product/login" th:text="${verticalnavbar.heading5}"></a>
+  <a href="#" th:text="${verticalnavbar.heading6}"></a>
+</div>
+<span style="font-size:20px;cursor:pointer;font-family: auto;display: flex;justify-content: center;align-items: center;margin-top: 18px;margin-right:10px; margin-left:50px;" 
+ onclick="openNav()" th:text="${verticalnavbar.heading1}" class="vnavbarhome"></span>
+        </li>
+       
+       <li class="nav-item">
+          <a class="nav-link" href="/webpage/home" th:text="${navitems.home}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/webpage/about" th:text="${navitems.aboutus}"></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${navitems.contactus}"></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:each = "navbar : ${navbar}" th:text="${navbar.contactus}"></a></li>
+          </ul>
+                  <li class="nav-item">
+          <a class="nav-link" href="/webpage/deals" th:text="${navitems.deals}"></a>
+        </li>
+                 <li class="nav-item">
+          <a class="nav-link" href="/webpage/feedback" th:text="${navitems.feedback}"></a>
+        </li>
+               <li class="nav-item">
+          <a class="nav-link" href="/webpage/login" th:text="${navitems.login}"></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="https://localhost:8080/" th:text="${navitems.logout}"></a>
+        </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${navitems.service}"></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:each = "navbar : ${navbar}" th:text="${navbar.service}"></a></li>
+          </ul>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      
+    </div>
+  </div>
+</nav> <br>
+
+
+<h3 class="text-center">About us</h3>
+<p>
+<h1>electronics store</h1>
+Electronics Store – Shopping for Electronics Made Easy. Shopping for electronics can be a daunting task. With so many options and unknowns, it’s important to make sure you have the right information when choosing the perfect product for your needs. An electronic store can provide customers with both convenience and knowledge when it comes to purchasing the latest technology. Here is why shopping at an electronic store is the way to go. <br>
+
+Electronics stores are the ideal place to shop for all types of consumer electronics, from televisions and sound systems to computers and gaming devices. Stores stock numerous brands in many styles and sizes so that customers have plenty of options available when making their purchase decisions. In addition, most stores offer expert advice on topics such as product specifications or compatibility with other products.<br>
+
+Most electronics stores offer excellent prices on their products. Many times they feature special deals with attractive discounts on popular items, allowing customers to save money while purchasing quality merchandise. Shopping around at different stores or outlets can help customers find even better deals on exactly what they’re looking for.<br>
+
+electronics store
+Here’s a photo of a person trying out headphones at an electronics store<br>
+When shopping at an electronics store, customers don’t need to worry about not understanding something- the employees will be able to give them a hand. Expert staff members are knowledgeable about all aspects of the new technology being sold, including troubleshooting and installation tips where appropriate. Most often, employees are trained by the manufacturers themselves so they can accurately answer any questions customers may have about a particular item or brand.<br>
+
+Last but certainly not least, shopping at an electronics store offers convenience for those who don’t have enough time in their busy day-to-day life to visit multiple retail locations or online shops in order to compare prices and models or understand complex technical jargon related to new technology products. With just one visit, shoppers can view various models from different manufacturers side-by-side in person or via a digital display system provided in many stores today; enabling them to quickly select the exact item they require without having to do hours of research beforehand.<br>
+
+If you’re looking for convenience, variety, great deals, and knowledgeable sales staff there’s no better place than an electronics store! All these factors combined make it an ideal location if you want an easy shopping experience when purchasing your new electronic device with peace of mind knowing you got the best value possible out of your purchase decision!<br>
+
+Here’s a list of the top 10 electronics stores in the world:<br>
+Best Buy – Founded in 1966, Best Buy is one of the largest electronics retailers in the US. They offer a wide selection of products from leading brands, as well as top-of-the-line customer service.<br>
+Amazon – Launched in 1994, Amazon was one of the first online stores to offer a wide selection of electronics and other products at competitive prices. They continue to be a leader in e-commerce today.<br>
+Walmart – Established in 1962, Walmart has become one of the world’s leading retailers. In addition to offering an extensive range of electronics, they are also known for their unbeatable low prices and excellent customer service.<br>
+Fry’s Electronics – Founded in 1985, Fry’s has become a household name for electronics lovers across the US and Canada. With more than 40 stores nationwide, Fry’s carries everything from PCs and gaming consoles to home theater systems and smartphones.<br>
+B&H Photo Video – Started in 1973, B&H Photo Video offers customers an unmatched selection of imaging and audio/visual equipment at competitive prices. From cameras to headphones and computers, they have it all!<br>
+Micro Center – Operating since 1979, Micro Center is one of the nation’s leading computer retail chains with over 30 locations across 15 states offering consumers a wide variety of personal computers and accessories at competitive prices.<br>
+Newegg – Established in 2001, Newegg is an American online retailer that specializes in computer hardware and consumer electronics such as video game consoles and laptops. They also offer their customers helpful tools such as product reviews to help make informed decisions before making a purchase decision.<br>
+Abt Electronics – An American consumer electronics store founded back in 1936, Abt Electronics continues to be a family-owned business that offers customers high-quality consumer electronic products, appliances, home automation items, tech services, etc<br>
+Crutchfield – This Virginia-based corporation has been selling car stereos & AV gear since 1974. Crutchfield offers a selection that includes all types of consumer audio/video equipment specifically designed for car applications as well as home use.<br>
+Apple Store – The Apple Store was opened by company founder Steve Jobs back in 2001. It has grown into what it is today, offering Apple products ranging from iPhones & iPads to Macbooks & desktop computers along with tech guidance provided by its knowledgeable team members.<br>
+In conclusion, electronics stores are the perfect place to shop for all kinds of consumer electronics. They offer a wide variety of products, unbeatable deals, and knowledgeable staff members who can provide expert advice. Most importantly, shopping at an electronics store is convenient and allows customers to easily compare different products to find the one that suits their needs best. With so many advantages, it’s easy to see why shopping at an electronics store is the preferred choice for tech-savvy shoppers everywhere!
+</p>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>verticalNavbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <style>
+  body{
+  background-image:url('https://i.pinimg.com/originals/1b/45/63/1b456377a9dce67a7dc3630260aa7572.gif')
+  }
+  </style>
+  <body>
+  
+  	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="http://localhost:8080/">
+			<img src="/images/image1.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top"> VerticalNavbar</a>
+		</div>   
+		<a class="btn btn-primary" type="button" href=/verticalnavbar/create>Create</a>	
+		</div>
+	</nav><br>
+  
+  <div class="container-fluid">
+  </div><br>
+    
+   <div class="container-fluid">
+	<table class="table table-success table-striped">
+		<thead class="table table-danger text-light">
+    		<tr>
+    			<th>Id</th>
+    			<th>Heading 1</th>
+    			<th>Heading 2</th>
+    			<th>Heading 3</th>
+    			<th>Heading 4</th>
+    			<th>Heading 5</th>
+    			<th>Heading 6</th>
+    			<th>Action</th>
+    		</tr>
+    	<tbody class="table-success">
+    		<tr th:each = "verticalnavbar : ${verticalnavbar}">
+    			<td th:text="${verticalnavbar.id}"></td>
+    			<td th:text="${verticalnavbar.heading1}"></td>
+    			<td th:text="${verticalnavbar.heading2}"></td>
+    			<td th:text="${verticalnavbar.heading3}"></td>
+     			<td th:text="${verticalnavbar.heading4}"></td>
+     			<td th:text="${verticalnavbar.heading5}"></td>
+     			<td th:text="${verticalnavbar.heading6}"></td>
+    		
+    			<td>
+    			<div class="d-grid gap-2 d-md-block">
+  				<a class="btn btn-success" type="button" th:href="@{/verticalnavbar/edit(id=${verticalnavbar.id})}">Edit</a>
+ 				 <a class="btn btn-danger" type="button" th:href="@{/verticalnavbar/delete(id=${verticalnavbar.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+				</div>
+				</td>
+    		</tr>
+    	</tbody>
+    	</thead>
+    </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

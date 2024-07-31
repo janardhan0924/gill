@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electronic store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </head>
+  
+<style type="text/css">
+  
+  body{
+  background-image:url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-255379.jpg&fm=jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  
+  
+					/*	popup css	*/
+  
+  
+  
+  #ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.6);
+    z-index: 1001;
+}
+#popup {
+    width: 555px;
+    height: 500px;
+    background-image:url('https://i.pinimg.com/originals/a3/57/3c/a3573c74725a2b3df26ff600095a258c.gif');
+    background-repeat:no-repeat;
+    background-size:cover;
+    border: 2px solid #000;
+    border-radius: 50px;
+    position: relative;
+    top: 150px; left: 430px;
+}
+.popupimages{
+	height:200px;
+	width:553px;
+	margin-top:50px;
+}
+.btn-close{
+	margin-left:500px;
+	margin-top:20px;
+	margin-right:20px
+}
+  
+ 
+ 
+   					/* Carousel css */
+  
+  
+.carouselimages{
+  	height:600px;
+}
+
+
+  
+					/*	cards slide css	*/
+
+  
+  
+.wrapper {
+    position: relative;
+}
+.wrapper { 
+	width: 100%; 
+	position: relative; 
+} 
+.wrapper i { 
+	height: 50px; 
+	width: 50px; 
+	background: rgb(118, 233, 118); 
+	text-align: center; 
+	line-height: 50px; 
+	border-radius: 50%; 
+	cursor: pointer; 
+	position: absolute; 
+	top: 50%; 
+	font-size: 1.25 rem; 
+	transform: translateY(-50%); 
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); 
+} 
+.wrapper .carousel { 
+	display: grid; 
+	grid-auto-flow: column; 
+	grid-auto-columns: calc((100% / 4) - 12px); 
+	gap: 35px; 
+	overflow-x: auto; 
+	scroll-snap-type: x mandatory; 
+	scroll-behavior: smooth; 
+	scrollbar-width: 0; 
+} 
+.carousel :where(.card, .img) { 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+} 
+.carousel.dragging { 
+	scroll-snap-type: none; 
+	scroll-behavior: auto; 
+} 
+.carousel.no-transition { 
+	scroll-behavior: auto; 
+} 
+.carousel.dragging .card { 
+	cursor: grab; 
+	user-select: none; 
+} 
+.carousel .card { 
+	scroll-snap-align: start; 
+	height: 420px; 
+	list-style: none; 
+	background: #fff; 
+	border-radius: 8px; 
+	display: flex; 
+	cursor: pointer; 
+	width: 98%; 
+	padding-bottom: 15px; 
+	align-items: center; 
+	justify-content: center; 
+	flex-direction: column; 
+} 
+.cardsslideimage{
+	height:200px;
+}
+.card .img { 
+	background: green; 
+	width: 145px; 
+	height: 145px; 
+	border-radius: 50%; 
+} 
+.card .img img { 
+	width: 140px; 
+	height: 140px; 
+	object-fit: cover; 
+	border-radius: 50%; 
+	border: 4px solid #fff; 
+} 
+.card h2 { 
+	font-weight: 500; 
+	font-size: 1.56rem; 
+	margin: 30px 0 5px; 
+} 
+.card span { 
+	color: #6a6d78; 
+	font-size: 1.31rem; 
+} 
+@media screen and (max-width: 900px) { 
+	.wrapper .carousel { 
+		grid-auto-columns: calc((100% / 2) - 9px); 
+	} 
+} 
+@media screen and (max-width: 600px) { 
+	.wrapper .carousel { 
+		grid-auto-columns: 100%; 
+	} 
+}
+
+  
+					/*  navbar css */
+					
+
+
+.electronicstore{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-family:auto;
+ }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-image:url('https://i.gifer.com/ByRk.gif');
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.vnavbarhome{
+	height:10px;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: red;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color:red;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+  	
+  	
+						/* cards css */
+
+  
+.card-body{
+  	width:100%;
+  	background-color:aqua;
+	border: 10px solid white;
+}
+.cardsimages{
+height:160px;
+width:100%;
+border:10px solid white;
+}
+ 
+ 
+ 						/* Cards collapse css */
+    	
+    	
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border: 10px solid aqua;
+}
+.active, .collapsible:hover {
+  background-color: red;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: aqua;
+  border:10px solid aqua;
+}
+.cardscollapseimages{
+height:150px;
+width:100%;
+border: 5px solid white;
+}
+
+</style> 
+ <body>
+
+
+										<!-- Popup -->
+										
+										
+
+<div id="ac-wrapper">
+    <div id="popup" th:each="popup : ${popup}">
+    		<div data-bs-theme="dark">
+  		<button type="button" class="btn-close" aria-label="Close" onClick="PopUp()"></button>
+		</div>
+            <h2 class="text-center text-light" th:text="${popup.name}"></h2>
+            <img class="popupimages" th:src="@{'/images/' + ${popup.imageFileName}}" alt="..." width="100">
+            <h3 class="text-center text-light" style="margin-top:50px;" th:text="${popup.description}"></h3>
+            <div class="d-grid gap-2 col-6 mx-auto">
+		</div>
+    </div>
+</div>
+
+										<!-- Navigation Bar -->
+										
+										
+										
+   <nav class="navbar navbar-expand-lg bg-body-tertiary websitenavbar" th:each="navigationbar : ${navigationbar}">
+  <div class="container-fluid">
+    <a class="navbar-brand electronicstore" href="http://localhost:8080/">Electronic Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="flex-direction: row;font-family: none;font-size: 20px;">
+      
+      
+     <li class="nav-item" th:each = "verticalnavbar : ${verticalnavbar}">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a style="color:red" th:text="${verticalnavbar.heading1}"></a>
+  <a href="/product/deals" th:text="${verticalnavbar.heading2}"></a>
+  <a href="/product/deals" th:text="${verticalnavbar.heading3}"></a>
+  <a href="/product/deals" th:text="${verticalnavbar.heading4}"></a>
+  <a href="/product/login" th:text="${verticalnavbar.heading5}"></a>
+  <a href="#" th:text="${verticalnavbar.heading6}"></a>
+</div>
+<span style="font-size:20px;cursor:pointer;font-family: auto;display: flex;justify-content: center;align-items: center;margin-top: 18px;margin-right:10px; margin-left:50px;" 
+ onclick="openNav()" th:text="${verticalnavbar.heading1}" class="vnavbarhome"></span>
+        </li>
+       
+       <li class="nav-item">
+          <a class="nav-link" href="/product/home" th:text="${navigationbar.home}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product/about" th:text="${navigationbar.aboutus}"></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${navigationbar.contactus}"></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:each = "navbar : ${navbar}" th:text="${navbar.contactus}"></a></li>
+          </ul>
+                  <li class="nav-item">
+          <a class="nav-link" href="/product/deals" th:text="${navigationbar.deals}"></a>
+        </li>
+                 <li class="nav-item">
+          <a class="nav-link" href="/product/feedback" th:text="${navigationbar.feedback}"></a>
+        </li>
+               <li class="nav-item">
+          <a class="nav-link" href="/product/login" th:text="${navigationbar.login}"></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="https://localhost:8080/" th:text="${navigationbar.logout}"></a>
+        </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${navigationbar.service}"></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:each = "navbar : ${navbar}" th:text="${navbar.service}"></a></li>
+          </ul>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      
+    </div>
+  </div>
+</nav> <br>
+
+
+
+										<!-- Carousel -->
+
+
+
+
+  <div class="carouselcontainer">
+  	  <div id="carouselExample" class="carousel slide" >
+  <div class="carousel-inner">
+    <div class="carousel-item active" th:each="product : ${product}">
+      <img  class="d-block w-100 carouselimages" th:src="@{'/images/' + ${product.imageFileName}}"  alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+	</div>
+  </div>  <br> 
+
+
+
+										<!-- Cards -->
+
+
+
+<div class="cards">
+		<div class="cards">
+  <div class="row row-cols-4 grid">
+<div class="card mb-3" th:each="product : *{product}">
+  <img src="..." class="card-img-top cardsimages" alt="..." th:src="@{'/images/' + *{product.imageFileName}}">
+  <div class="card-body ">
+    <h5 class="card-title" th:text="*{product.name}"></h5>
+     <ul class="list-group list-group-flush ">
+  <li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  <li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  </ul>  <br>
+    <a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    <a href="#" class="btn btn-danger"> Buy Now</a>    
+  </div>
+  </div>
+  </div>
+  </div>
+</div><br>
+
+
+									<!-- Cards with Collapse -->
+
+
+
+<div class="cardscollapse">
+  <div class="row" style="grid-row-gap: 30px;grid-column-gap:85px;">
+    <div class="col" th:each="product : ${product}">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top cardscollapseimages"  alt="..." th:src="@{'/images/' + *{product.imageFileName}}">
+  <div class="card-body">
+    <h5 class="card-title" th:text="*{product.name}"></h5>
+<button type="button" class="collapsible" style="text-align:center">view more</button>
+<div class="content">
+<ul class="list-group list-group-flush ">
+  		<li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  		<li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  	</ul>  <br>
+    	<a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    	<a href="#" class="btn btn-danger"> Buy Now</a>    
+  	</div>
+  </div>
+</div>
+</div>
+</div>
+</div> <br>
+
+
+
+											<!-- Cards slide -->
+
+
+
+<div class="cardsslide">
+<div class="wrapper">
+        <ul class="carousel">
+            <li class="card" th:each="product : ${product}">
+             <img src="..." class="card-img-top cardsslideimage" alt="..." th:src="@{'/images/' + *{product.imageFileName}}">          
+<div class="card-body">
+    <h5 class="card-title" th:text="*{product.name}"></h5>
+	<ul class="list-group list-group-flush ">
+  		<li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  		<li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  	</ul>  <br>
+    	<a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    	<a href="#" class="btn btn-danger"> Buy Now</a>    
+  	</div>
+</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+/* Navbar slide javascript */
+
+function openNav() {
+	  document.getElementById("mySidenav").style.width = "250px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+	}
+
+
+	
+/* cards with collapse javascript */
+
+	
+	
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var content = this.nextElementSibling;
+	    if (content.style.display === "block") {
+	      content.style.display = "none";
+	    } else {
+	      content.style.display = "block";
+	    }
+	  });
+	}
+	
+	
+	
+/* popup javascript */
+	
+	
+function PopUp(){
+    document.getElementById('ac-wrapper').style.display="none"; 
+}
+
+
+
+/* cards slide javascript */
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector(".carousel");
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const wrapper = document.querySelector(".wrapper");
+
+    const firstCard = carousel.querySelector(".card");
+    const firstCardWidth = firstCard.offsetWidth;
+
+    let isDragging = false,
+        startX,
+        startScrollLeft,
+        timeoutId;
+
+    const dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+    };
+
+    const dragging = (e) => {
+        if (!isDragging) return;
+
+        // Calculate the new scroll position
+        const newScrollLeft = startScrollLeft - (e.pageX - startX);
+
+        // Check if the new scroll position exceeds
+        // the carousel boundaries
+        if (newScrollLeft <= 0 || newScrollLeft >=
+            carousel.scrollWidth - carousel.offsetWidth) {
+
+            // If so, prevent further dragging
+            isDragging = false;
+            return;
+        }
+
+        // Otherwise, update the scroll position of the carousel
+        carousel.scrollLeft = newScrollLeft;
+    };
+
+    const dragStop = () => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+    };
+
+    const autoPlay = () => {
+
+        // Return if window is smaller than 800
+        if (window.innerWidth < 800) return;
+
+        // Calculate the total width of all cards
+        const totalCardWidth = carousel.scrollWidth;
+
+        // Calculate the maximum scroll position
+        const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
+
+        // If the carousel is at the end, stop autoplay
+        if (carousel.scrollLeft >= maxScrollLeft) return;
+
+        // Autoplay the carousel after every 2500ms
+        timeoutId = setTimeout(() =>
+            carousel.scrollLeft += firstCardWidth, 2500);
+    };
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    wrapper.addEventListener("mouseenter", () =>
+        clearTimeout(timeoutId));
+    wrapper.addEventListener("mouseleave", autoPlay);
+
+    // Add event listeners for the arrow buttons to
+    // scroll the carousel left and right
+    arrowBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            carousel.scrollLeft += btn.id === "left" ?
+                -firstCardWidth : firstCardWidth;
+        });
+    });
+});
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
